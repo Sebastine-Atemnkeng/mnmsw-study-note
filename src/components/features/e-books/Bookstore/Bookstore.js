@@ -15,7 +15,7 @@ const Bookstore = () => {
 
   return (
     <div className="bookstore">
-      <h1>Bookstore</h1>
+      <h1>Welcome to Bookstore</h1>
       <div className="book-grid">
         {books.map(book => (
           <BookCard key={book.id} book={book} />

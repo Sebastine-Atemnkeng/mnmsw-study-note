@@ -1,7 +1,7 @@
 // Home.js
 import React from 'react';
 import './Home.css';
-import Search from '../Search/Search'; // Adjust the path as necessary
+import Search from '../../Global/Search/Search'; // Adjust the path as necessary
 
 const Home = ({ user }) => (
   <div className="home-container">

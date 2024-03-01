@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavigationBar.css'; // Ensure this path matches your file structure
-import { Link } from 'react-router-dom';
+
 
 const NavigationBar = ({ user, onSignOut }) => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false); // Correctly define the state here
+
 
   return (
     <nav className="navigation-bar" aria-label="Main navigation">
@@ -70,39 +71,7 @@ const NavigationBar = ({ user, onSignOut }) => {
           )}
         </div>
 
-
-        <div 
-          className="nav-link E-Books"
-          onMouseEnter={() => setIsDropdownVisible(true)}
-          onMouseLeave={() => setIsDropdownVisible(false)}
-        >
-          E-Books
-          {isDropdownVisible && (
-            <div className="dropdown-content">
-
-              <NavLink to="/E-Books" activeClassName="active" className="nav-link">E-Books</NavLink>
-
-              <NavLink to="/Linux-E-Books" className="dropdown-item">Linux e-books</NavLink>
-              <NavLink to="/Kubernetes-E-Books" className="dropdown-item">Kubernetes e-books</NavLink>
-              <NavLink to="/Docker-E-books" className="dropdown-item">Docker e-books</NavLink>
-              <NavLink to="/Terraform-E-books" className="dropdown-item">Terraform e-books</NavLink>
-              <NavLink to="/AWS Cloud E-Books" className="dropdown-item">AWS Cloud e-books</NavLink>
-              <NavLink to="/Github-Actions-Jenkins-E-Books" className="dropdown-item">Github Actions & Jenkins e-books</NavLink>
-              <NavLink to="/Python-E-books" className="dropdown-item">Python e-book</NavLink>
-              <NavLink to="/GO-E-Books" className="dropdown-item">Go e-books</NavLink>
-              <Link to="/bookstore" className="btn btn-primary">E-Books</Link>
-            </div>
-          )}
-        </div>
-
-
-
-
-
-
-
-
-
+        <NavLink to="/e-books" activeClassName="active" className="nav-link">E-Books</NavLink>
 
         <div 
           className="nav-link more"

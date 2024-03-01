@@ -1,0 +1,60 @@
+.bookstore {
+  padding: 20px;
+  background-color: #F5F5F5; /* Light grey background for slight contrast */
+  color: #333; /* Dark grey color for text for readability */
+}
+
+.bookstore h1 {
+  text-align: center;
+  color: #2C3E50; /* Dark blue for headings */
+  margin-bottom: 40px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between books */
+  padding: 0;
+  list-style: none;
+}
+
+.book-card {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensures content does not overflow */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+.book-card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensure cover photo covers the space */
+}
+
+.book-info {
+  padding: 15px;
+}
+
+.book-title {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  color: #34495E; /* Darker blue for book titles */
+}
+
+.book-author {
+  font-size: 16px;
+  color: #7F8C8D; /* Grey for author names */
+  margin: 0;
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
