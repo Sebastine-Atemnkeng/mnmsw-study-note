@@ -1,0 +1,61 @@
+/* Typography Enhancements */
+h1 {
+    font-size: 2.5rem; /* Example size */
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem; /* Example size */
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* Example size */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Navbar Adjustments */
+  .custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    transition: background-color 0.3s;
+  }
+  
+  /* When user scrolls down, navbar could change style */
+  .custom-navbar.scrolled {
+    background-color: #eaeaea9a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  /* Button Enhancements */
+  .btn-custom {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn-custom:focus,
+  .btn-custom:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  /* Form Element Enhancements */
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  }
+  
+  /* Card Component Adjustments */
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  /* Add any additional custom styles as needed for your project */
+  

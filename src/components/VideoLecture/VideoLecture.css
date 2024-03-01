@@ -1,0 +1,44 @@
+/* VideoLecture.css */
+.video-lecture {
+    /* Center the video in the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .video-lecture iframe {
+    /* Responsive video sizing */
+    max-width: 100%;
+    height: auto;
+    border: none; /* Remove default border */
+    /* Optional: Aspect ratio for the video */
+    aspect-ratio: 16 / 9;
+  }
+  
+  /* Add some space around the video and a subtle border */
+  .video-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the border contains the video */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add styles for any title or description text for the video */
+  .video-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #333; /* Dark color for better readability */
+  }
+  
+  .video-description {
+    margin-bottom: 16px;
+    color: #666; /* Lighter text color */
+    font-size: 16px;
+    line-height: 1.5; /* More readable line spacing */
+  }
+  
+  

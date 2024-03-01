@@ -1,0 +1,37 @@
+/* BookCard.css */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures content fits within the borders */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* White background */
+  transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.book-card:hover {
+  transform: scale(1.02); /* Slightly enlarge card on hover */
+}
+
+.book-card img {
+  width: 100%; /* Ensure image covers the width of the card */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the assigned area */
+}
+
+.book-info {
+  padding: 15px; /* Padding inside the card for text */
+}
+
+.book-info h2 {
+  font-size: 1.2rem; /* Title font size */
+  margin-bottom: 10px; /* Space below the title */
+  color: #333; /* Dark grey color for text */
+}
+
+.book-info p {
+  font-size: 1rem; /* Paragraph font size */
+  color: #666; /* Medium grey color for text */
+  margin: 0; /* Remove default margin */
+}

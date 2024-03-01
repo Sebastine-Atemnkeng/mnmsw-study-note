@@ -1,0 +1,19 @@
+/* App.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F8F9FA; /* Use color picker to get exact color from the mock-up */
+}
+
+.container {
+  padding: 20px;
+}
+
+.navbar {
+  background-color: #FFFFFF; /* Assuming white background, adjust based on mock-up */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Example shadow, adjust as needed */
+  /* Other navbar styles */
+}
+
+/* Add styles for other elements based on mock-up */

@@ -1,0 +1,35 @@
+/* index.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f8f9fa; /* Light background color */
+    color: #333; /* Primary text color */
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  a {
+    color: inherit; /* Makes link colors inherit the text color */
+    text-decoration: none; /* Removes underline from links */
+  }
+  
+  /* Utility classes for margin and padding */
+  .mt-1 { margin-top: 0.25rem; }
+  .mb-1 { margin-bottom: 0.25rem; }
+  .ml-1 { margin-left: 0.25rem; }
+  .mr-1 { margin-right: 0.25rem; }
+  .pt-1 { padding-top: 0.25rem; }
+  .pb-1 { padding-bottom: 0.25rem; }
+  .pl-1 { padding-left: 0.25rem; }
+  .pr-1 { padding-right: 0.25rem; }
+  
+  /* Add more utility classes and global styles as needed */
+  

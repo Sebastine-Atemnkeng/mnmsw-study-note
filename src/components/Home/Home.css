@@ -1,0 +1,25 @@
+/* Home.css */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* padding: 50px 20px; */
+    padding: 20px;
+    margin-top: 50px; /* Adjust based on your preference */
+    color: #333; /* Replace with exact color from mock-up */
+  }
+  
+  .home-title {
+    font-size: 2rem; /* Replace with exact font size from mock-up */
+    margin-bottom: 20px;
+  }
+  
+  .home-text {
+    margin-bottom: 50px;
+    font-size: 1rem; /* Replace with exact font size from mock-up */
+  }
+  
+  /* Add more styles based on the mock-up */
+  
+
