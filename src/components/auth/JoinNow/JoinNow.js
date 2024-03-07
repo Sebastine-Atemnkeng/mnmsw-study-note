@@ -1,46 +1,42 @@
-import React, { useState } from 'react';
-import './JoinNow.css'; // Updated path
+import React from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory for navigation
+import './JoinNow.css'; // Ensure this CSS file exists and contains the styles you'll define
 
 const JoinNow = ({ onJoinNow }) => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const history = useHistory(); // Use the useHistory hook for navigation
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onJoinNow(username, email, password); // Assuming onJoinNow is your updated prop function
+  // Function to navigate to the SignUp page
+  const navigateToSignUpWithEmail = () => {
+    history.push('/signup'); // Use the path to your SignUp page here
+  };
+
+  // Function to handle navigation to the login page
+  const navigateToLogin = () => {
+    history.push('/login'); // Replace '/login' with the path to your actual login page
   };
 
   return (
-    <div className="join-now-container">
-      <h2>Join Now</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+    <div className="join-now-page">
+      <div className="join-now-container">
+        <div className="top-section">
+          <div className="login-link" onClick={navigateToLogin}>Already have an account? Log in</div>
+          <h2 className="title">Sign Up</h2>
+          <button onClick={navigateToSignUpWithEmail} className="email-signup">Sign up with email</button>
         </div>
-        <div>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+        <div className="social-login">
+          
+          <button className="google-login">Continue with Google</button>
+          <button className="teachable-login">Continue with Teachable</button>
         </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+        <div className="email-opt-in">
+          <input type="checkbox" id="email-opt" />
+          <label htmlFor="email-opt">Yes, Study Note can email me with promotions and news. (optional)</label>
         </div>
-        <button type="submit" className="join-now-button">Join Now</button>
-      </form>
+        <div className="terms">
+          By signing up, I agree to Study Note's <a href="/terms-of-use">Terms of Use</a> &
+          <a href="/privacy-policy"> Privacy Policy</a> of the learning platform.
+        </div>
+      </div>
     </div>
   );
 };

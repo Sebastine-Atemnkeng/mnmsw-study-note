@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './NavigationBar.css'; // Ensure this path matches your file structure
+import '../../../styles/styles.css'; // Ensure this path matches your file structure
 
 
 const NavigationBar = ({ user, onSignOut }) => {
@@ -17,10 +17,11 @@ const NavigationBar = ({ user, onSignOut }) => {
         aria-expanded={isNavExpanded}
         onClick={() => setIsNavExpanded(!isNavExpanded)}
       >
-        <span>Menu</span> {/* Placeholder for menu icon */}
+        
       </button>
       <div className={`nav-links ${isNavExpanded ? 'show' : ''}`} id="navigation">
-        <NavLink exact to="/" activeClassName="active" className="nav-link">Home</NavLink>
+        
+        <NavLink to="/courses" className="nav-link">Courses</NavLink>
         <NavLink to="/upload" activeClassName="active" className="nav-link">Upload</NavLink>
 
         <div 
@@ -28,7 +29,8 @@ const NavigationBar = ({ user, onSignOut }) => {
           onMouseEnter={() => setIsDropdownVisible(true)}
           onMouseLeave={() => setIsDropdownVisible(false)}
         >
-          Bootcamp
+          
+          <NavLink to="/Bootcamp" className="dropdown-item">Bootcamp</NavLink>
           {isDropdownVisible && (
             <div className="dropdown-content">
               <NavLink to="/devops-bootcamp" className="dropdown-item">DevOps Bootcamp</NavLink>
@@ -39,29 +41,12 @@ const NavigationBar = ({ user, onSignOut }) => {
 
 
         <div 
-          className="nav-link Courses"
-          onMouseEnter={() => setIsDropdownVisible(true)}
-          onMouseLeave={() => setIsDropdownVisible(false)}
-        >
-          Courses
-          {isDropdownVisible && (
-            <div className="dropdown-content">
-              <NavLink to="/Kubernetes-Course" className="dropdown-item">Kubernetes Course</NavLink>
-              <NavLink to="/Docker-Docker-Compose-Course" className="dropdown-item">Docker & Docker Compose Course</NavLink>
-              <NavLink to="/Github-Actions-Course" className="dropdown-item">Github Actions Course</NavLink>
-              <NavLink to="/Terraform-Course" className="dropdown-item">Terraform Course</NavLink>
-              <NavLink to="/IT-Foundation-Course" className="dropdown-item">IT Foundation Course</NavLink>
-            </div>
-          )}
-        </div>
-
-
-        <div 
           className="nav-link RoadMaps"
           onMouseEnter={() => setIsDropdownVisible(true)}
           onMouseLeave={() => setIsDropdownVisible(false)}
         >
-          RoadMaps
+          
+          <NavLink to="/RoadMaps" className="dropdown-item">RoadMaps</NavLink>
           {isDropdownVisible && (
             <div className="dropdown-content">
               <NavLink to="/DevOps-Roadmap" className="dropdown-item">DevOps Roadmap</NavLink>
@@ -78,7 +63,8 @@ const NavigationBar = ({ user, onSignOut }) => {
           onMouseEnter={() => setIsDropdownVisible(true)}
           onMouseLeave={() => setIsDropdownVisible(false)}
         >
-          More
+          
+          <NavLink to="/More" className="dropdown-item">More</NavLink>
           {isDropdownVisible && (
             <div className="dropdown-content">
               <NavLink to="/about" className="dropdown-item">About - My DevOps journey</NavLink>

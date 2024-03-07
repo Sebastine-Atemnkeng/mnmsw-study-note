@@ -1,38 +1,30 @@
 import React, { useState } from 'react';
-import './UploadNotes.css';
+import './UploadNotes.css'; // Make sure to update the CSS file for styling
 
 const UploadNotes = () => {
-  // State for the form fields
   const [noteTitle, setNoteTitle] = useState('');
-  const [noteCategory, setNoteCategory] = useState(''); // Assuming you have categories
+  const [noteCategory, setNoteCategory] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [noteContent, setNoteContent] = useState('');
 
-  // Handle file selection
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
-  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Validate form fields as necessary
     if (!noteTitle || !selectedFile || !noteContent) {
       alert('Please fill in all fields and select a file.');
       return;
     }
     
-    // Prepare FormData for sending
     const formData = new FormData();
     formData.append('title', noteTitle);
     formData.append('category', noteCategory);
     formData.append('file', selectedFile);
     formData.append('content', noteContent);
-
-    // Placeholder for where you would submit the form data to your backend
-    console.log('Form Submitted', formData);
     
-    // Reset form fields after submission
+    console.log('Form Submitted', formData);
     setNoteTitle('');
     setNoteCategory('');
     setSelectedFile(null);
@@ -40,35 +32,55 @@ const UploadNotes = () => {
   };
 
   return (
-    <div className="upload-container">
-      <h2 className="upload-title">Upload Content</h2>
-      <form className="upload-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Note Title"
-          value={noteTitle}
-          onChange={(e) => setNoteTitle(e.target.value)}
-        />
-        <select
-          value={noteCategory}
-          onChange={(e) => setNoteCategory(e.target.value)}
-        >
-          {/* Replace these options with your actual categories */}
-          <option value="">Select a category</option>
-          <option value="category1">Category 1</option>
-          <option value="category2">Category 2</option>
-        </select>
-        <input
-          type="file"
-          onChange={handleFileChange}
-        />
-        <textarea
-          placeholder="Write your note here..."
-          value={noteContent}
-          onChange={(e) => setNoteContent(e.target.value)}
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
+    <div className="upload-notes-page">
+      <div className="upload-notes-container">
+        <div className="header">
+          <h2>Upload Notes</h2>
+        </div>
+        <form onSubmit={handleSubmit} className="upload-notes-form">
+          <div className="form-field">
+            <label htmlFor="noteTitle">Note Title</label>
+            <input
+              id="noteTitle"
+              type="text"
+              placeholder="Enter note title"
+              value={noteTitle}
+              onChange={(e) => setNoteTitle(e.target.value)}
+            />
+          </div>
+          <div className="form-field">
+            <label htmlFor="noteCategory">Note Category</label>
+            <select
+              id="noteCategory"
+              value={noteCategory}
+              onChange={(e) => setNoteCategory(e.target.value)}
+            >
+              <option value="">Select a category</option>
+              <option value="category1">Document</option>
+              <option value="category2">Video</option>
+              {/* Add more categories as needed */}
+            </select>
+          </div>
+          <div className="form-field">
+            <label htmlFor="selectedFile">Upload File</label>
+            <input
+              id="selectedFile"
+              type="file"
+              onChange={handleFileChange}
+            />
+          </div>
+          <div className="form-field">
+            <label htmlFor="noteContent">Note Content</label>
+            <textarea
+              id="noteContent"
+              placeholder="Write your note here..."
+              value={noteContent}
+              onChange={(e) => setNoteContent(e.target.value)}
+            ></textarea>
+          </div>
+          <button type="submit" className="submit-button">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };

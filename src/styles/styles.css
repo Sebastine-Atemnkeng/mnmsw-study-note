@@ -1,0 +1,183 @@
+/* Add this CSS to your styles.css file */
+
+/* Styles for the "Study Note" branding modifications */
+/* Add this at the top of your styles.css file */
+html {
+  height: 100%; /* Ensure html takes full height of the viewport */
+  background-color: #010118; /* Dark blue background for the entire page */
+  margin: 0; /* Removes the default browser margin */
+  font-family: 'Open Sans', sans-serif; /* Example font, replace as needed */
+  color: #011145; /* Default text color */
+}
+.navigation-bar{
+  background-color: #a5a5ab !important; /* Using !important to override other styles */
+  color: rgb(71, 69, 69);
+}
+.nav-link:not(.action-button) {
+  margin-left: 50px !important; /* Adjust the right margin to reduce space between items */
+  padding: 5px 0 !important; /* Adjust padding as needed, example here is for top and bottom */
+}
+
+/* If you're using flexbox for your navigation container */
+.navigation-container {
+  display: grid;
+  grid-gap: 10px; /* Align items to the start of the container */
+}
+
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  color: #1818b5; /* Example primary color */
+  text-decoration: solid;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.brand-logo img {
+  max-height: 40px; /* Adjust based on your logo's size */
+  margin-right: 10px;
+}
+
+.action-button.login {
+  background-color: #3bd6b5d0; /* Green background for login for distinction */
+}
+
+.action-button:hover {
+  opacity: 0.5;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #76797c;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(236, 229, 229, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.nav-link:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #aec3c830;
+}
+
+/* Add this CSS to your styles.css file for FilterBar component */
+
+.filter-bar {
+  display: flex; /* Aligns buttons in a row */
+  justify-content: left; /* Centers the buttons */
+  align-items: center; /* Centers the buttons vertically */
+  margin-top: 0.8cm;
+  background-color: #010118; /* Dark background, similar to your navbar */
+  
+}
+
+.filter-bar button {
+  background-color:  rgb(71, 69, 69); /* Transparent background */
+  border: none ;  /* No border */
+  color: #d6cdcda7; /* White text */
+  padding: 0.5rem 0.5rem; /* Top and bottom padding, left and right padding */
+  margin: 0 0.5rem; /* Margin to separate buttons */
+  font-size: 0.990rem; /* Smaller font size */
+  cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.filter-bar button:hover {
+  background-color: #d6cdcda7; /* Highlight color on hover */
+  color: #f1e3e3; /* Keep text white on hover */
+}
+
+/* You might want to style the active button differently */
+.filter-bar button.active {
+  background-color: #0056b3; /* Slightly darker blue for the active button */
+  color: #ebe0e0;
+}
+
+/* Add this to your styles.css */
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  padding: 0.2rem;
+}
+
+.search-bar form {
+  display: flex;
+  width: 100%;
+  max-width: 500px; /* Adjust based on your design */
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #ddd; /* Light gray border */
+  border-right: none; /* Remove the right border */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
+  outline: none;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff; /* Blue background */
+  color: rgba(227, 244, 245, 0.569);
+  border: none;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #5f95ce; /* Darker blue on hover */
+}
+
+.search-form {
+  display: flex;
+  width: 50%;
+  margin-top: 0.9cm;
+  max-width: 50px; /* Adjust based on your layout */
+  background-color: rgb(71, 69, 69); /* Light background for the form */
+  border-radius: 50px; /* Rounded corners for the form */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px 0 0 50px; /* Rounded corners on the left side */
+  outline: none;
+}
+
+.search-button {
+  background-color: #013368; /* Blue background */
+  border: none;
+  border-radius: 0 50px 50px 0; /* Rounded corners on the right side */
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button svg {
+  fill: rgb(117, 111, 111); /* White color for the search icon */
+}
+
+.search-button:hover {
+  background-color: #3b0f01; /* Darker blue on hover */
+}
+.content-background {
+  background-color: #010118; /* Dark blue background */
+  /* Add any other styling here such as padding or margin */
+}

@@ -1,56 +1,40 @@
-/* Sidebar.css */
+/* src/components/Sidebar/Sidebar.css */
 .sidebar {
-    width: 250px;
     height: 100%;
-    background: #f7f7f71f;
-    position: fixed;
+    width: 250px; /* Sidebar width */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
     left: 0;
-    top: 0;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0); /* Sidebar is visible */
-  }
-  
-  .sidebar.closed {
-    transform: translateX(-100%); /* Sidebar is hidden */
-  }
-  
-  .sidebar-toggle {
-    /* Styling for the toggle button */
-    display: block;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    width: 100%;
+    background-color: #111; /* Sidebar background color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
   }
   
   .sidebar-content {
-    padding: 20px;
+    padding: 10px;
   }
   
-  .sidebar-title {
-    font-size: 1.0rem;
-    margin-bottom: 1rem;
-  }
-  
-  .sidebar-list {
+  .nav-menu ul {
     list-style-type: none;
     padding: 0;
   }
   
-  .sidebar-item {
-    background: #ffffff2d;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  .nav-menu li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ddd;
+    display: block;
   }
   
-  .sidebar-item:hover {
-    background-color: #ef4e4e;
+  .nav-menu li a:hover {
+    color: #f1f1f1;
+    background-color: #555; /* Add a hover effect to links */
+  }
+  
+  .nav-menu .active {
+    background-color: #04AA6D; /* Highlight the active link */
+    color: white;
   }
   

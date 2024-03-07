@@ -1,29 +1,46 @@
 .bookstore {
-  padding: 20px;
-  background-color: #F5F5F5; /* Light grey background for slight contrast */
-  color: #333; /* Dark grey color for text for readability */
-}
-
-.bookstore h1 {
+  padding: 30px;
   text-align: center;
-  color: #2C3E50; /* Dark blue for headings */
-  margin-bottom: 40px;
+  background: #010118;
+  color: #474444; /* Dark grey color for text for readability */
+}
+h1 {
+  margin-bottom: 20px;
 }
 
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Space between books */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 85px;
+  justify-content: center;
   padding: 0;
-  list-style: none;
 }
-
 .book-card {
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   border-radius: 10px; /* Rounded corners */
   overflow: hidden; /* Ensures content does not overflow */
   transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+  background: #3f2001;
+}
+
+
+.book-card img {
+  width: 100%; /* Adjust image size to fit the card */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 15px;
+}
+
+.book-card-title {
+  /* Styling for the title in the book card */
+  font-size: 1.1rem; /* Adjust the font size as needed */
+  margin-bottom: 10px;
+}
+
+.book-card-author {
+  /* Styling for the author in the book card */
+  font-size: 0.9rem; /* Adjust the font size as needed */
 }
 
 .book-card:hover {
@@ -52,9 +69,31 @@
   margin: 0;
 }
 
-/* Adjustments for mobile responsiveness */
-@media (max-width: 600px) {
-  .book-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+
+
+/* Additional styling for search-bar as per SearchBar.js */
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-button {
+  padding: 0 15px;
+  border: none;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  color: white;
 }

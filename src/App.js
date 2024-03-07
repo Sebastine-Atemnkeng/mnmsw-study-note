@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './styles/styles.css'; // Adjust the path as needed
 
 
 // Import your components
-import NavigationBar from './components/Global/NavigationBar/NavigationBar';
-import Home from './components/Containers/Home/Home';
-import LandingPage from './components/Containers/pages/LandingPage';
+import NavBar from './components/Global/NavBar/NavBar';
+
 import UploadNotes from './components/Containers/UploadNotes/UploadNotes';
 import Login from './components/auth/Login/Login';
-import Dashboard from './components/Containers/Dashboard/Dashboard';
-import ProtectedRoute from './components/Global/ProtectedRoute/ProtectedRoute';
+import SignUp from './components/auth/SignUp/SignUp';
 import JoinNow from './components/auth/JoinNow/JoinNow';
-import Sidebar from './components/Global/Sidebar/Sidebar';
+// import SearchBar from './components/Global/SearchBar/SearchBar';
+
+import Foundation from './components/features/courses/Foundation/Foundation';
+
+import CoursesPage from './components/features/courses/CoursesPage.js/CoursesPage';
 
 // Importing BookCard and Bookstore components
 import BookCard from './components/features/e-books/BookCard/BookCard';
@@ -21,7 +23,6 @@ import Bookstore from './components/features/e-books/Bookstore/Bookstore';
 
 function App() {
   const [user, setUser] = useState(null);
-  const [activeContent, setActiveContent] = useState(null);
 
   // Define your handlers
   const handleJoinNow = async (username, email, password) => {
@@ -39,30 +40,30 @@ function App() {
     setUser(null);
   };
 
-  const handleContentChange = (content) => {
-    setActiveContent(content);
-  };
-
   return (
     <Router>
-      <NavigationBar user={user} onSignOut={handleSignOut} />
+    
+      <div>
+        <NavBar user={user} onSignOut={handleSignOut} />
+      </div>
+
       <div className="app-body">
-        <Sidebar onContentChange={handleContentChange} />
+      {/* <sidebar onContentChange={handleContentChange} /> */}
+
         
         <Switch>
-          <Route path="/" exact component={LandingPage} />
+          
+          <Route path="/signup" component={SignUp} />
+          <Route path="/courses" component={CoursesPage} />
           <Route path="/e-books" component={Bookstore} />
 
           <Route path="/e-books/:bookId" component={BookCard} />
-          <Route path="/home" render={() => <Home user={user} activeContent={activeContent} />} />
           <Route path="/login" render={() => user ? <Redirect to="/home" /> : <Login onLogin={handleLogin} />} />
           <Route path="/join" render={() => user ? <Redirect to="/home" /> : <JoinNow onJoinNow={handleJoinNow} />} />
           <Route path="/upload" component={UploadNotes} />
-          <ProtectedRoute path="/dashboard" component={() => <Dashboard user={user} />} />
+          <Route path="/Foundation" element={<Foundation />} />
           {/* Additional routes as needed */}
-          
-
-
+        
         </Switch>
       </div>
     </Router>

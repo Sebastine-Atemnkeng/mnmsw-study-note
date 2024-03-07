@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './Login.css'; // Make sure to create a Login.css file for styling
+import { useHistory } from 'react-router-dom'; // Make sure to import useHistory
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -13,46 +14,72 @@ const Login = ({ onLogin }) => {
     setError('');
 
     if (!username || !password) {
-      setError('Username and password are required.');
+      setError('Username and password are required');
       setIsLoading(false);
       return;
     }
 
     try {
-      await onLogin(username, password);  // Assume onLogin returns a promise
+      await onLogin(username, password);
       // Handle successful login if necessary
     } catch (e) {
       setError('Failed to login. Please try again.');
-      // Log the error or display to the user
     } finally {
       setIsLoading(false);
     }
   };
 
+  // Initialize history using the useHistory hook
+  const history = useHistory();
+
+  const navigateToSignUpWithEmail = () => {
+    history.push('/signup'); // Redirects the user to the login page
+  };
+
   return (
-    <form onSubmit={handleLogin}>
-      {/* It's important for accessibility to include a label for each input */}
-      <label htmlFor="username">Username</label>
-      <input
-        id="username"
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        id="password"
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      {error && <div className="error-message">{error}</div>}
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? 'Logging in...' : 'Login'}
-      </button>
-    </form>
+    <div className="login-page">
+      <div className="login-container">
+        <div className="login-header">Login</div>
+        <form onSubmit={handleLogin} className="login-form">
+          <div className="form-field">
+          {error && <div className="error-message">{error}</div>}
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="form-field">
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-options">
+            <div className="checkbox-container">
+              <input type="checkbox" id="remember-me" />
+              <label htmlFor="remember-me">Remember Me</label>
+            </div>
+            <div className="forgot-password-link">Forgot Password</div>
+          </div>
+          <button type="submit" disabled={isLoading} className="login-button">
+            {isLoading ? 'Logging in...' : 'Login'}
+          </button>
+          <div className="separator"></div>
+          <button type="button" className="google-login">Login with Google</button>
+          <button type="button" className="teachable-login">Login with Teachable</button>
+          <div className="signup-link">Need an account? <span onClick={navigateToSignUpWithEmail} style={{cursor: 'pointer', textDecoration: 'underline'}}>Sign Up</span></div>
+
+        </form>
+      </div>
+    </div>
   );
 };
 
